@@ -1,0 +1,12 @@
+{% spaceless %}
+{% load i18n %}
+<form class="form form-cmslogout" method="post" action="{{ logout_url }}">
+    {% csrf_token %}
+    {% for field in logout_form %}
+        {{ field }}
+    {% endfor %}
+    <div class="submit-line">
+        <button type="submit" class="submit">{% trans 'log out' %}</button>
+    </div>
+</form>
+{% endspaceless %}

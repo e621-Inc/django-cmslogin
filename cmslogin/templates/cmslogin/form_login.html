@@ -1,0 +1,21 @@
+{% spaceless %}
+{% load i18n %}
+<form class="form form-cmslogin" method="post" action="{{ login_url }}">
+    {% csrf_token %}
+    {% if login_form.non_field_errors %}
+        <div class="form-errors">{{ login_form.non_field_errors }}</div>
+    {% endif %}
+    {% for field in login_form %}
+        {% if field.is_hidden %}
+            {{ field }}
+        {% else %}
+            <div class="form-row{% if field.errors %} errors{% endif %}">
+                {{ field.label_tag }}{{ field }}{{ field.errors }}
+            </div>
+        {% endif %}
+    {% endfor %}
+    <div class="submit-line">
+        <button type="submit" class="submit">{% trans 'log in' %}</button>
+    </div>
+</form>
+{% endspaceless %}

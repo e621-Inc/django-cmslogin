@@ -1,0 +1,8 @@
+{% spaceless %}
+{% load i18n %}
+{% if logout_form %}
+<div class="plugin plugin-cmslogout">
+    {% include 'cmslogin/form_logout.html' %}
+</div>
+{% endif %}
+{% endspaceless %}

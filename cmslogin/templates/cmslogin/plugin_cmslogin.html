@@ -1,0 +1,12 @@
+{% spaceless %}
+{% load i18n %}
+{% if login_form or object.show_logout %}
+<div class="plugin plugin-cmslogin">
+    {% if login_form %}
+        {% include 'cmslogin/form_login.html' %}
+    {% elif object.show_logout %}
+        {% include 'cmslogin/form_logout.html' %}
+    {% endif %}
+</div>
+{% endif %}
+{% endspaceless %}
