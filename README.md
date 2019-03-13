@@ -1,1 +1,1 @@
-# django-admin-styles
+# DJANGO CMS Login
