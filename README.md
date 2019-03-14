@@ -1,7 +1,7 @@
 # DJANGO CMS Login
 
 !!! ALPHA !!!  
-explicitly djang0 1.9 atm
+explicitly django 1.9 atm
 
 ## configure
 
@@ -37,7 +37,7 @@ urlpatterns = [
 * {% cmslogin_loginout %}: provides login form and logout button
 
 ```html
-{% load cmslogin_tage %}
+{% load cmslogin_tags %}
 <body>
     {% cmslogin_loginout %}
 </body>
