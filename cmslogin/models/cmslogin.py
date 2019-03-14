@@ -36,12 +36,12 @@ class CMSLogin(CMSPlugin):
         ),
     )
 
+    def __str__(self):
+        return '{}'.format(self.name)
+
     @property
     def slug(self):
         return '{}'.format(slugify(self.name))
-
-    def __str__(self):
-        return '{}'.format(self.name)
 
     def get_absolute_url(self):
         if self.placeholder.page:

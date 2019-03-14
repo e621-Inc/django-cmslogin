@@ -1,0 +1,8 @@
+{% spaceless %}
+{% load i18n %}
+{% if login_form  %}
+<div class="tag tag-cmslogin">
+    {% include 'cmslogin/form_login.html' %}
+</div>
+{% endif %}
+{% endspaceless %}

@@ -27,7 +27,7 @@ CLASSIFIERS = [
 
 setup(
     name='django-cmslogin',
-    version='0.0.1',
+    version='0.0.2',
     author='Alaric Mägerle',
     author_email='info@rouxcode.ch',
     description=DESCRIPTION,

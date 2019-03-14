@@ -2,6 +2,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
+from django.utils.text import slugify
 from django.utils.translation import ugettext_lazy as _
 
 from cms.models import CMSPlugin
@@ -28,6 +29,21 @@ class CMSLogout(CMSPlugin):
 
     def __str__(self):
         return '{}'.format(self.name)
+
+    @property
+    def slug(self):
+        return '{}'.format(slugify(self.name))
+
+    def get_absolute_url(self):
+        if self.placeholder.page:
+            return '{}#{}'.format(
+                self.placeholder.page.get_absolute_url(),
+                self.slug,
+            )
+        return ''
+
+    def get_error_url(self, request=None):
+        return self.get_absolute_url()
 
     def get_success_url(self, request=None):
         page = self.cms_page or self.placeholder.page

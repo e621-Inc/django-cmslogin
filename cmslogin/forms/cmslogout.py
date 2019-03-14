@@ -33,6 +33,12 @@ class CMSLogoutForm(forms.Form):
             raise forms.ValidationError(_('nope'))
         return value
 
+    def is_user(self):
+        user = self.request.user
+        if user.is_active:
+            return True
+        return False
+
     def logout(self):
         logout(self.request)
 
